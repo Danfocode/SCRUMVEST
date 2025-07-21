@@ -1,16 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.SCRUMVEST;
 
-/**
- *
- * @author dorej
- */
-public class SCRUMVEST {
+import com.mycompany.SCRUMVEST.config.JavaFx;
+import javafx.application.Application;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
+@SpringBootApplication
+public class SCRUMVEST {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Application.launch(JavaFx.class, args);
     }
 }

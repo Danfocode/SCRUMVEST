@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
-    
-</AnchorPane>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<BorderPane styleClass="content-view"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.mycompany.SCRUMVEST.ui.TaskViewController">
+    <stylesheets>
+        <URL value="@../styles/application.css"/>
+    </stylesheets>
+    <top>
+        <HBox styleClass="search-bar">
+            <TextField fx:id="searchField" promptText="Buscar tareas..."/>
+            <ComboBox fx:id="statusFilter" promptText="Filtrar por estado"/>
+            <Button fx:id="assignedTasksButton" text="Mis Tareas" styleClass="add-button" onAction="#showAssignedTasks"/>
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="taskTable" styleClass="table-view"/>
+    </center>
+    <bottom>
+        <Button fx:id="addTaskButton" text="Agregar Tarea" styleClass="add-button" onAction="#addTask" visible="false"/>
+    </bottom>
+</BorderPane>
