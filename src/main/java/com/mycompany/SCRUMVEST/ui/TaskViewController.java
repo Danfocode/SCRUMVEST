@@ -4,8 +4,8 @@
  */
 package com.mycompany.SCRUMVEST.ui;
 
-import com.mycompany.scrumvest.login.LoginService;
-import com.scrumvest.scrumvest.task.TaskService;
+import com.mycompany.SCRUMVEST.login.LoginService;
+import com.mycompany.SCRUMVEST.task.TaskService;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -21,13 +21,13 @@ public class TaskViewController {
     @FXML private Button assignedTasksButton;
     private final LoginService loginService;
     private final TaskService taskService;
-    public TaskViewController(AuthService authService, TaskService taskService) {
-        this.authService = authService;
+    public TaskViewController(LoginService authService, TaskService taskService) {
+        this.loginService = authService;
         this.taskService = taskService;
     }
     @FXML
     private void initialize() {
-        if (authService.isProductOwner()) {
+        if (loginService.isProductOwner()) {
             addTaskButton.setVisible(true);
         }
         // Configurar tabla y filtros
